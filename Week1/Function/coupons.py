@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')                         # hepls in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                         # hepls in importing function from utility
 
 # importing coupon_number function
-from Utility.utility import gen_coupon_number                                           
+from Week1.Utility.utility import gen_coupon_number                                           
 
 if __name__ == '__main__':                                                          
     while True:                                                                     
@@ -13,6 +13,8 @@ if __name__ == '__main__':
             # passing argument in function
             coupons = gen_coupon_number(num_of_coupons)                                 
             print(coupons)
+            
+            # breaking while loop
             break                                                                   
         
         except:
