@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')                     # helps in importing the function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                     # helps in importing the function from utility
 
 # importing monthly_payment from utility
-from Utility.utility import monthly_payment                                     
+from Week1.Utility.utility import monthly_payment                                     
 
 if __name__ == '__main__':                                                      
     while True:                                                                 
@@ -15,6 +15,8 @@ if __name__ == '__main__':
             # using them as argument for monthly_paymentfunction
             pay = monthly_payment(principal, rate, time_period)                 
             print("Your Monthly payment is : Rs. {0}".format(pay))
+            
+            # breaking the loop
             break                                                               
 
         except:
