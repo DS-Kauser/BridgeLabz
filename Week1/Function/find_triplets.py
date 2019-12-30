@@ -8,10 +8,11 @@ if __name__ == '__main__':
     while True:                                                                 
         try:         
             # taking elements into list                                                           
-            alist = input("Enter intergers separated by space : ").split()      
-            
-            # converting element into integers
-            alist = list(map(lambda x : int(x), alist))                         
+            num_of_element = int(input("Enter number of element in the list : "))
+            alist = []
+            for i in range(num_of_element):
+                temp = int(input("Enter your numbers : "))
+                alist.append(temp)      
             
             # passing list as argument to calculate triplets
             triplet, num_of_trip = find_triplets(alist)                         
