@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/BridgeLabz/Week1')         # helps in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')         # helps in importing function from utility
 
 # importing get_permutations from utility
 from Week1.Utility.utility import get_permutations                        
