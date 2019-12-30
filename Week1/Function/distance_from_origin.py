@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')             # helps in importing function from utility
 
 # importing distance_from_origin function from utility
 from Week1.Utility.utility import distance_from_origin                        
