@@ -13,8 +13,11 @@ if __name__ == '__main__':
             amount = int(input("Enter your amount in between (0 - 20000): "))   
             if amount < 0:
                 continue
+            
             # calculating changes
             money_change(amount)                                                
+            
+            # while loop exit 
             break                                                               
 
         except:
