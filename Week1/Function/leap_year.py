@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')         # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')         # helps in importing function from utility
 
 # importing find_leap_year from utility
-from Utility.utility import find_leap_year                          
+from Week1.Utility.utility import find_leap_year                          
 
 if __name__ == '__main__':                                          
     
@@ -13,6 +13,8 @@ if __name__ == '__main__':
             
             # passing year as argument in find_leap_year
             find_leap_year(year)                                    
+            
+            # breaking while loop
             break                                                   
         
         except:
