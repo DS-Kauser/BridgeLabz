@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')             # helps in importing function from utility
 
 # importing bubble_sort function
 from Week1.Utility.utility import bubble_sort                                 
@@ -8,7 +8,12 @@ if __name__ == '__main__':
     while True:                                                         
         try:                                                            
             #sorting with bubble sort
-            alist = [5,1,2,6,4,3,10,7,9,8]                              
+            num_of_element = int(input("Enter number of element in the list : "))
+            alist = []
+            for i in range(num_of_element):
+                temp = int(input("Enter your integers : "))
+                alist.append(temp)
+                              
             alist = bubble_sort(alist)                                  
             print(alist)
             break
