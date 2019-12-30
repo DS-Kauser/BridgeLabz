@@ -1,10 +1,10 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')                             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                             # helps in importing function from utility
 
 # importing find_prime,find_pelindrome, find_anagram function
-from Utility.utility import find_prime                                                  
-from Utility.utility import find_pelindrome                                             
-from Utility.utility import find_anagram                                                
+from Week1.Utility.utility import find_prime                                                  
+from Week1.Utility.utility import find_pelindrome                                             
+from Week1.Utility.utility import find_anagram                                                
 
 if __name__ == '__main__':                                                              
     while True:                                                                         
