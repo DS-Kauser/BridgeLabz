@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')         # helps in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')         # helps in importing function from utility
 
 # importing insertion_sort function
 from Week1.Utility.utility import insertion_sort                          
