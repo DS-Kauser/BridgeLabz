@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                     # helps in importing functioni from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')                     # helps in importing functioni from utility
 
 # importing cal_windchill_speed function from utility   
 from Week1.Utility.utility import cal_windchill_speed                                 
