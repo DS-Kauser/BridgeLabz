@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')                 # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                 # helps in importing function from utility
 
 # importing cal_quad_roots from utility
-from Utility.utility import cal_quad_roots                                  
+from Week1.Utility.utility import cal_quad_roots                                  
 
 if __name__ == '__main__':                                                  
     while True:                                                             
