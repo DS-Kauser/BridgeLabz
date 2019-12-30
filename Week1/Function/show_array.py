@@ -13,6 +13,7 @@ if __name__ == '__main__':
             col = int(input("Enter number of columns : "))              
             
             # passing the argument in show_array function
+            
             array2D = show_array(row, col)                               
             print("Your 2D array is \n")
             print(array2D)                                      
