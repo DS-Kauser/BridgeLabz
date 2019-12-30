@@ -1,13 +1,14 @@
 import sys
 import os
-os.chdir("/home/user/Desktop/Mack/BridgeLabz/Week1/Utility")
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')   
+os.chdir("/home/user/Desktop/BridgeLabz/Week1/Utility")
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')   
 
-from Utility.utility import binary_search
+from Week1.Utility.utility import binary_search
 
 if __name__ == '__main__':                                                  # creating main method
     while True:                                                             # to run the code again if any error is found
         try:
+            # opening file and reading it
             file1 = (open('text.txt', 'r'))
             alist = file1.read()
             alist = list(alist)
