@@ -14,8 +14,8 @@ if __name__ == '__main__':
             c = int(input("Enter constant C : "))                           
             
             # using coefficient as argument for cal_quad_roots function
-            r1, r2 = cal_quad_roots(a, b, c)                                
-            print("Roots are {0} and {1}".format(r1, r2))               
+            root1, root2 = cal_quad_roots(a, b, c)                                
+            print("Roots are {0} and {1}".format(root1, root2))               
             break                                                           
             
         except: 
