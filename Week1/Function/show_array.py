@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')             # helps in importing function from utility
 
 # importing show_array from utility
-from Utility.utility import show_array                                  
+from Week1.Utility.utility import show_array                                  
 
 if __name__ == '__main__':                                              
     
@@ -15,6 +15,8 @@ if __name__ == '__main__':
             # passing the argument in show_array function
             array2D = show_array(row,col)                               
             print(array2D)                                      
+            
+            # breaking while loop
             break                                                       
 
         except:
