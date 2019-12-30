@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')                 # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                 # helps in importing function from utility
 
 # importing to_binary function
-from Utility.utility import to_binary                                       
+from Week1.Utility.utility import to_binary                                       
 
 if __name__ == '__main__':                                                  
     while True:                                                             
@@ -11,6 +11,8 @@ if __name__ == '__main__':
             num = int(input("Enter any decimal number : "))                 
             binary = to_binary(num)                                         
             print(binary)
+            
+            # breaking the loop
             break                                                           
         except:
             print("Please Enter a valid input")                             
