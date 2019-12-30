@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                         # hepls in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')                         # hepls in importing function from utility
 
 # importing coupon_number function
 from Week1.Utility.utility import gen_coupon_number                                           
