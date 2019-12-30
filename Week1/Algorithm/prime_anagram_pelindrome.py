@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz')                             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/BridgeLabz')                             # helps in importing function from utility
 
 # importing find_prime,find_pelindrome, find_anagram function
 from Week1.Utility.utility import find_prime                                                  
@@ -7,6 +7,8 @@ from Week1.Utility.utility import find_pelindrome
 from Week1.Utility.utility import find_anagram                                                
 
 if __name__ == '__main__':                                                              
+    # loop to run the code again if any is found
+    
     while True:                                                                         
         try:                                                                            
             # taking the end point and calculating prime numbers till that point
@@ -29,6 +31,8 @@ if __name__ == '__main__':
             pelind2 = find_pelindrome(anag)                                             
             print("Number which is pelindrome as well as anagram in prime number list : ")
             print(pelind2)
+            
+            # breaking the while loop
             break
         
         except:
