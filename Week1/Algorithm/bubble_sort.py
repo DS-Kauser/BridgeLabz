@@ -1,8 +1,8 @@
 import sys
-sys.path.append('/home/user/Desktop/Mack/BridgeLabz/Week1')             # helps in importing function from utility
+sys.path.append('/home/user/Desktop/Mack/BridgeLabz')             # helps in importing function from utility
 
 # importing bubble_sort function
-from Utility.utility import bubble_sort                                 
+from Week1.Utility.utility import bubble_sort                                 
 
 if __name__ == '__main__':                                              
     while True:                                                         
