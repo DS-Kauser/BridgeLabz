@@ -14,7 +14,7 @@ if __name__ == '__main__' :
             ordinate = float(input("Enter y-value: "))                  
             
             # passing the argument in the function to calculate distance
-            dist = distance_from_origin(abcissa, ordinate)              
+            dist = round(distance_from_origin(abcissa, ordinate), 3)              
             print(dist)
             
             # breaking while loop
