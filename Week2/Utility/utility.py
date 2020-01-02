@@ -113,6 +113,20 @@ class linked_list():
             print("linked list is empty")
             
     
+    def del_end(self):
+        if self.head is not None:
+            last_node = self.head
+            while True:
+                if last_node.next == None:
+                    pre_node.next = None
+                    break
+                
+                pre_node = last_node
+                last_node = last_node.next
+        else:
+            print("list is empty")   
+
+
     def print_list(self):
 
         if self.head is None:
