@@ -127,6 +127,31 @@ class linked_list():
             print("list is empty")   
 
 
+    def del_at(self, position):
+        if position < 0 or position >= self.list_len():
+            print("Enter a valid position")
+            return
+
+        elif position == 0:
+            self.del_head()
+            return
+
+        else:
+            if self.head is not None:
+                cur_node = self.head
+                cur_pos = 0
+                while True:
+                    if cur_pos == position:
+                        pre_node.next = cur_node.next
+                        cur_node.next = None
+                        break
+                    pre_node = cur_node
+                    cur_node = cur_node.next
+                    cur_pos += 1
+            
+            else:
+                print("list is empty")
+
     def print_list(self):
 
         if self.head is None:
