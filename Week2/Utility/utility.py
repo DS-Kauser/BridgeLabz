@@ -27,7 +27,7 @@ class linked_list():
     def __init__(self):
         self.head = None
 
-    def insert_last(self, new_data):
+    def insert_end(self, new_data):
         new_node = node(new_data)
         
         if self.head is None:
@@ -41,6 +41,18 @@ class linked_list():
                 last_node = last_node.next
             last_node.next = new_node
 
+            
+    def insert_head(self, new_data):
+        new_node = node(new_data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp_node = self.head
+            self.head = new_node
+            new_node.next = temp_node
+            del temp_node
+        
+    
     def print_list(self):
         if self.head is None:
             print("list is empty")
