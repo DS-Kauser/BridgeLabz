@@ -63,6 +63,28 @@ class linked_list():
             del temp_node
         
     
+    def insert_at(self, new_data, position):
+        if position < 0 or position >= self.list_len():
+            print("Enter a valid input")
+            return 
+
+        elif position == 0:
+            self.insert_head(new_data)
+            return
+        else:
+            new_node = node(new_data)
+            cur_node = self.head
+            cur_pos = 0
+            while True:
+                if cur_pos == position:
+                    pre_node.next = new_node
+                    new_node.next = cur_node
+                    break
+                pre_node = cur_node
+                cur_node = cur_node.next
+                cur_pos += 1
+
+            
     def print_list(self):
         if self.head is None:
             print("list is empty")
