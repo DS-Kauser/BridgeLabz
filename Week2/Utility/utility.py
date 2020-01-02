@@ -103,8 +103,18 @@ class linked_list():
                 cur_node = cur_node.next
                 cur_pos += 1
 
+    
+    def del_head(self):
+        if self.head is not None:
+            temp_node = self.head
+            self.head = self.head.next
+            temp_node.next = None
+        else:
+            print("linked list is empty")
             
+    
     def print_list(self):
+
         if self.head is None:
             print("list is empty")
         
@@ -116,3 +126,4 @@ class linked_list():
                 curr_node = curr_node.next
                 if curr_node is None:
                     break
+
