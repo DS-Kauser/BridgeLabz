@@ -152,6 +152,7 @@ class linked_list():
             else:
                 print("list is empty")
 
+
     def print_list(self):
 
         if self.head is None:
