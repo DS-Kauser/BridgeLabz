@@ -23,7 +23,7 @@ creating a class linked_list
 adding different method to it
 """
 
-class linked_list():
+class unord_linked_list():
     def __init__(self):
         self.head = None
 
