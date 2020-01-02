@@ -27,7 +27,7 @@ class unord_linked_list():
     def __init__(self):
         self.head = None
 
-    def pos(self, data):
+    def pos(self, element):
         if self.head is None:
             print("List is empty")
             return
@@ -36,11 +36,13 @@ class unord_linked_list():
             pos = 0
             cur_node = self.head
             while True:
-                if cur_node.data == data:
+                
+                if cur_node.data == element:
                     return pos
                     break
+                
                 elif cur_node.next == None:
-                    return "Element is not found"
+                    return None
                     break
 
                 cur_node = cur_node.next
@@ -130,11 +132,11 @@ class unord_linked_list():
     def del_at(self, position):
         if position < 0 or position >= self.list_len():
             print("Enter a valid position")
-            return
+            return 
 
         elif position == 0:
             self.del_head()
-            return
+            return 
 
         else:
             if self.head is not None:
