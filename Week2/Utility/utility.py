@@ -26,3 +26,24 @@ adding different method to it
 class linked_list:
     def __init__(self):
         self.head = None
+
+    def insert_last(self, new_node):
+        if self.head is None:
+            self.head = new_node
+        else:
+            last_node = self.head
+            while last_node is None:
+                last_node.next
+            last_node.next = new_node
+
+    def print_list(self):
+        if self.head is None:
+            print("list is empty")
+        else:
+            curr_node = self.head
+            while True:
+                if curr_node is None:
+                    break
+                else:
+                    print(curr_node)
+                    curr_node = curr_node.next
