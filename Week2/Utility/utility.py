@@ -27,7 +27,26 @@ class linked_list():
     def __init__(self):
         self.head = None
 
+    def pos(self, data):
+        if self.head is None:
+            print("List is empty")
+            return
+        
+        else:
+            pos = 0
+            cur_node = self.head
+            while True:
+                if cur_node.data == data:
+                    return pos
+                    break
+                elif cur_node.next == None:
+                    return "Element is not found"
+                    break
+
+                cur_node = cur_node.next
+                pos += 1
     
+
     def list_len(self):
         length = 0
         curr_node = self.head
