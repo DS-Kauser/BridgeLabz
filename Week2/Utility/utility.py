@@ -27,6 +27,16 @@ class linked_list():
     def __init__(self):
         self.head = None
 
+    
+    def list_len(self):
+        length = 0
+        curr_node = self.head
+        while curr_node is not None:
+            length += 1
+            curr_node = curr_node.next
+        return length
+
+    
     def insert_end(self, new_data):
         new_node = node(new_data)
         
