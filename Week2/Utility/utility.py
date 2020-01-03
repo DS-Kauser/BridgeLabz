@@ -119,13 +119,16 @@ class linked_list():
     def del_end(self):
         if self.head is not None:
             last_node = self.head
-            while True:
-                if last_node.next == None:
-                    pre_node.next = None
-                    break
-                
-                pre_node = last_node
-                last_node = last_node.next
+            if self.list_len() == 1:
+                self.head = None
+            else:
+                while True:
+                    if last_node.next == None:
+                        pre_node.next = None
+                        break
+                    
+                    pre_node = last_node
+                    last_node = last_node.next
         else:
             print("list is empty")   
 
@@ -238,22 +241,28 @@ class ord_linked_list(linked_list):
                 
     
 
-class stack():
-    def __init__(self):
-        self.items = []
+class stack(linked_list):
 
     def is_empty(self):
-        return self.items == []
+        if self.head is None:
+            return True
+        else:
+            return False
 
     def size(self):
-        return len(self.items)
+        return self.list_len()
 
     def push(self, element):
-        self.items.append(element)
+        self.insert_end(element)
 
     def pop(self):
-        return self.items.pop()
+        self.del_end()
     
     def peek(self):
-        return self.items[-1]
-    
+        if self.head is not None:
+            cur_node = self.head
+            while cur_node is not None:
+                return cur_node.new_data
+            cur_node = cur_node.next
+        else:
+            return None
