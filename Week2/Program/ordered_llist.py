@@ -15,7 +15,7 @@ if __name__ == '__main__':
             f = open(file_path, 'r')
             for line in f:
                 for num in line.split():
-                    list1.list_add(int(num))
+                    list1.sort_add(int(num))
             f.close()
             
             number = int(input("Enter a number : "))
