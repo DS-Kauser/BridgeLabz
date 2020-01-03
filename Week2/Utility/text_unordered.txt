@@ -8,3 +8,4 @@ mad
 word
 smart
 job
+new
