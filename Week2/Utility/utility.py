@@ -285,4 +285,5 @@ class queue(linked_list):
 
 
 
-class 
+class deque(linked_list):
+    pass
