@@ -21,7 +21,7 @@ if __name__ == '__main__':
             number = int(input("Enter a number : "))
             position = list1.pos(number)
             if position is None:
-                list1.list_add(number)
+                list1.sort_add(number)
                 
             else:
                 list1.del_at(position)
