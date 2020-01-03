@@ -23,7 +23,7 @@ creating a class linked_list
 adding different method to it
 """
 
-class unord_linked_list():
+class linked_list():
     def __init__(self):
         self.head = None
 
@@ -92,6 +92,7 @@ class unord_linked_list():
         elif position == 0:
             self.insert_head(new_data)
             return
+        
         else:
             new_node = node(new_data)
             cur_node = self.head
@@ -171,47 +172,67 @@ class unord_linked_list():
 
 
 
-class ord_linked_list():
+class ord_linked_list(linked_list):
     def __init__(self):
         self.head = None
 
-
-    def list_len(self):
-        length = 0
-        curr_node = self.head
-        while curr_node is not None:
-            length += 1
-            curr_node = curr_node.next
-        return length
-
-
-    def insert_end(self, new_data):
-        new_node = node(new_data)
+    
+    def list_sort(self):
         
+        success = True
+        while success:
+            success = False
+            pre_node = self.head
+            cur_node = pre_node.next
+            
+            while cur_node is not None:
+                if pre_node.data > cur_node.data:
+                    pre_node.data, cur_node.data = cur_node.data, pre_node.data
+                    success = True
+                
+                pre_node = cur_node
+                cur_node = cur_node.next
+
+    
+    def list_add(self, element):
+        new_node = node(element)
         if self.head is None:
             self.head = new_node
         
         else:
-            last_node = self.head
-            while True:
-                if last_node.next is None:
+            cur_node = self.head
+            while cur_node is not None:
+                if cur_node.data > new_node.data and cur_node is self.head:
+                    self.insert_start(element)
                     break
-                last_node = last_node.next
-            last_node.next = new_node
-
-
-    def ascend(self):
-        cur_node = self.head
-        swap = 0
-        while True:
-            while cur_node.next is not None:
-                if cur_node.data > cur_node.next.data:
-                    temp_node = cur_node.next
-                    cur_node.next = cur_node.next.next
-                    temp_node.next = cur_node
-                    swap += 1
-                curr_node = cur_node.next
-            if swap == 0:
-                break
-            else:
-                continue
+                elif cur_node.data > new_node.data:
+                    pre.next = new_node
+                    new_node.next = cur_node
+                    break
+                
+                pre_node = cur_node
+                cur_node = cur_node.next
+                
+            if cur_node is None:
+                pre.next = new_node
+                    
+    
+    def del_val(self, value):
+        
+        if self.head is not None:
+            
+            cur_node = self.head
+            while cur_node is not None:
+                
+                if self.head.data == value:
+                    self.head = self.head.next
+                    break
+                else:
+                    if cur_node.data == value:
+                        pre_node.next = cur_node.next
+                        cur_node.next = None
+                        del cur_node
+                        break
+                pre_node = cur_node
+                cur_node = cur_node.next
+                
