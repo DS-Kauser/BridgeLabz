@@ -22,7 +22,7 @@ if __name__ == "__main__":
             
             if c == True:
                 break
-            
+
             if dummy_stack.is_empty() == True:
                 print("Expression is balanced")
             else:
