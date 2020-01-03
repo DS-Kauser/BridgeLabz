@@ -206,7 +206,7 @@ class ord_linked_list(linked_list):
                     self.insert_start(element)
                     break
                 elif cur_node.data > new_node.data:
-                    pre.next = new_node
+                    pre_node.next = new_node
                     new_node.next = cur_node
                     break
                 
@@ -214,7 +214,7 @@ class ord_linked_list(linked_list):
                 cur_node = cur_node.next
                 
             if cur_node is None:
-                pre.next = new_node
+                pre_node.next = new_node
                     
     
     def del_val(self, value):
@@ -236,3 +236,5 @@ class ord_linked_list(linked_list):
                 pre_node = cur_node
                 cur_node = cur_node.next
                 
+    
+    
