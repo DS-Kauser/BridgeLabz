@@ -8,7 +8,7 @@ from Week2.Utility.utility import unord_linked_list
 if __name__ == '__main__':
     while True:
         try:
-            file_path = '/home/user/Desktop/BridgeLabz/Week2/Utility/text.txt'
+            file_path = '/home/user/Desktop/BridgeLabz/Week2/Utility/text_unordered.txt'
 
             open_file = open(file_path, 'r')
 
