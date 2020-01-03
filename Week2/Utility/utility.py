@@ -286,4 +286,24 @@ class queue(linked_list):
 
 
 class deque(linked_list):
-    pass
+    
+    def add_front(self, item):
+        self.insert_end(item)
+
+    def add_rear(self, item):
+        self.insert_head(item)
+
+    def del_front(self):
+        self.del_end()
+
+    def del_rear(self):
+        self.del_front()
+    
+    def is_empty(self):
+        if self.head == None:
+            return True
+        else:
+            return False
+
+    def size(self):
+        return self.list_len()
