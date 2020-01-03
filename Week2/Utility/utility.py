@@ -257,4 +257,3 @@ class stack():
     def peek(self):
         return self.items[-1]
     
-    
