@@ -253,24 +253,32 @@ class stack(linked_list):
         return self.list_len()
 
     def push(self, element):
-        self.insert_end(element)
+        self.insert_head(element)
 
     def pop(self):
-        self.del_end()
+        self.del_head()
     
     def peek(self):
         if self.head is not None:
-            cur_node = self.head
-            while cur_node is not None:
-                top = cur_node.data
-                cur_node = cur_node.next
-            return top
+            return self.head.data
         else:
             return None
 
 
 
-#class queue(linked_list):
+class queue(linked_list):
 
-    #def is_empty(self):
-        #if self.head
+    def is_empty(self):
+        if self.head is None:
+            return True
+        else:
+            return False
+        
+    def enqueue(self, item):
+        self.insert_end(item)
+
+    def dequeue(self):
+        self.del_head()
+
+    def size(self):
+        return self.list_len()
