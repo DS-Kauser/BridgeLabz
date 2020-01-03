@@ -194,7 +194,7 @@ class ord_linked_list(linked_list):
                 cur_node = cur_node.next
 
     
-    def list_add(self, element):
+    def sort_add(self, element):
         new_node = node(element)
         if self.head is None:
             self.head = new_node
