@@ -262,7 +262,15 @@ class stack(linked_list):
         if self.head is not None:
             cur_node = self.head
             while cur_node is not None:
-                return cur_node.new_data
-            cur_node = cur_node.next
+                top = cur_node.data
+                cur_node = cur_node.next
+            return top
         else:
             return None
+
+
+
+#class queue(linked_list):
+
+    #def is_empty(self):
+        #if self.head
