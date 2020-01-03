@@ -282,3 +282,7 @@ class queue(linked_list):
 
     def size(self):
         return self.list_len()
+
+
+
+class 
