@@ -169,3 +169,49 @@ class unord_linked_list():
                 if curr_node is None:
                     break
 
+
+
+class ord_linked_list():
+    def __init__(self):
+        self.head = None
+
+
+    def list_len(self):
+        length = 0
+        curr_node = self.head
+        while curr_node is not None:
+            length += 1
+            curr_node = curr_node.next
+        return length
+
+
+    def insert_end(self, new_data):
+        new_node = node(new_data)
+        
+        if self.head is None:
+            self.head = new_node
+        
+        else:
+            last_node = self.head
+            while True:
+                if last_node.next is None:
+                    break
+                last_node = last_node.next
+            last_node.next = new_node
+
+
+    def ascend(self):
+        cur_node = self.head
+        swap = 0
+        while True:
+            while cur_node.next is not None:
+                if cur_node.data > cur_node.next.data:
+                    temp_node = cur_node.next
+                    cur_node.next = cur_node.next.next
+                    temp_node.next = cur_node
+                    swap += 1
+                curr_node = cur_node.next
+            if swap == 0:
+                break
+            else:
+                continue
