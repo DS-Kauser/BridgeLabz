@@ -237,4 +237,24 @@ class ord_linked_list(linked_list):
                 cur_node = cur_node.next
                 
     
+
+class stack():
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return self.items == []
+
+    def size(self):
+        return len(self.items)
+
+    def push(self, element):
+        self.items.append(element)
+
+    def pop(self):
+        return self.items.pop()
+    
+    def peek(self):
+        return self.items[-1]
+    
     
