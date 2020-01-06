@@ -152,17 +152,17 @@ return the list containing prime numbers
 """
 def find_prime(end):                                
     alist = [2, 3, 5]                               
-    
     for i in range(7, end+1):                       
         c = 0                                       
+        
         for j in alist:                             
             if i%j != 0:                            
                 c += 1                              
                 
         if c == len(alist):                                         
             alist.append(i)                         
+    
     return alist
-
 
 
 # Find Pelindrome
