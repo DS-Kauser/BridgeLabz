@@ -38,22 +38,20 @@ taking list, starting index, end index, and word to be search
 using recursive method to search the word
 """
 def binary_search(lst, start, end, word):           
-     
     if end >= start:                                                                
         mid = start + (end-start) // 2                                              
+        
         if lst[mid].lower() == word.lower():                                        
             print("{0} is present at index {1}".format(word.lower(), mid))
             return None
-        elif lst[mid] > word:                                                       
-            return binary_search(lst, start, mid, word)                           
-
-        else:                                                                       
-            return binary_search(lst, mid+1, end, word)
         
-    else:                                                                           
-        print('{0} is not found'.format(word))
-        return None                                      
-
+        if lst[mid] > word:                                                       
+            return binary_search(lst, start, mid, word)                           
+        
+        return binary_search(lst, mid+1, end, word)
+    
+    print('{0} is not found'.format(word))
+    return None                                      
 
 
 #Insertion sort
