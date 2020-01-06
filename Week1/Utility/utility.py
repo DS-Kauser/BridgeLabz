@@ -76,16 +76,15 @@ taking a list
 sorting it using bubble sort method
 return that list
 """
-def bubble_sort(alist):                             
+def bubble_sort(a_list):                             
     success = True                                                  
     while success:                                                  
         success = False                                             
-        for i in range(len(alist)-1):                               
-            if alist[i] > alist[i+1]:                               
-                alist[i], alist[i+1] = alist[i+1], alist[i]         
+        for i in range(len(a_list)-1):                               
+            if a_list[i] > a_list[i+1]:                               
+                a_list[i], a_list[i+1] = a_list[i+1], a_list[i]         
                 success = True                                      
-    return alist                                                    
-
+    return a_list                                                    
 
 
 # Merge Sort
