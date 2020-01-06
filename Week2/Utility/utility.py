@@ -320,7 +320,7 @@ def prime(start, end):
         return [2]
     
     elif end > start and start >= 0 and end >= 2:
-        prime_list = [2]
+        prime_list = []
         number = start
         #print(type(end))
         while True:
@@ -331,12 +331,8 @@ def prime(start, end):
                 number += 1
                 continue
 
-            if number % 2 == 0:
-                number += 1
-                continue
-            
             count = 0
-            for i in range(3, int(sqrt(number))+1, 2):
+            for i in range(2, int(sqrt(number))+1, 1):
                 if number%i == 0:
                     count += 1
                 
