@@ -49,3 +49,10 @@ def search_hash(number):
             file_op3.close()
     except:
         print("oops! something went wrong")
+
+if __name__ == "__main__":
+    try:
+        number = int(input("Enter your number : "))
+        search_hash(number)
+    except:
+        print("Invalid Input")
