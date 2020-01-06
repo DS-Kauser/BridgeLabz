@@ -358,5 +358,3 @@ def anagram(word1, word2):
             return False
     else:
         return False         
-
-print(anagram(12,21))
