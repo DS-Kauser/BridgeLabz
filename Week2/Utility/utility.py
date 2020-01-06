@@ -314,25 +314,37 @@ class deque(linked_list):
 
 def prime(start, end):
     if start == end:
-        return None
+        return []
     
     elif start < end and end == 2:
         return [2]
     
-    elif end > start and start >= 0 and end >= 0:
-        prime_list = []
+    elif end > start and start >= 0 and end >= 2:
+        prime_list = [2]
         number = start
-
-        while number != end+1:
-            if number % 2 == 0:
+        #print(type(end))
+        while True:
+            if number > end:
+                break
+            #print('again')
+            if number == 1:
+                number += 1
                 continue
+
+            if number % 2 == 0:
+                number += 1
+                continue
+            
             count = 0
-            for i in range(3, sqrt(number)+1, 2):
+            for i in range(3, int(sqrt(number))+1, 2):
                 if number%i == 0:
                     count += 1
                 
             if count == 0: 
                 prime_list.append(number)
-
+            #print(prime_list)
+            number = number + 1
         return prime_list
-
+    
+    else:
+        return []
