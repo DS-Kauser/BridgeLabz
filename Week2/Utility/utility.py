@@ -8,6 +8,8 @@
  ******************************************************************************
 """
 
+from math import sqrt
+
 """
 adding a node class
 creates node with data and refrence to next node
@@ -307,3 +309,17 @@ class deque(linked_list):
 
     def size(self):
         return self.list_len()
+
+
+
+def prime(end):
+    prime_list = [2, 3, 5]
+    for i in range(7, end+1, 2):
+        count = 0
+        for number in prime_list:
+            if i%number != 0:
+                count += 1
+        if count == len(prime_list):
+            prime_list.append(i)
+    return prime_list
+
