@@ -127,7 +127,6 @@ def merge_sort(alist):
     return alist                                    
 
 
-
 # Anagram Detection
 """
 taking two words
@@ -141,11 +140,8 @@ def anagram_detection(a, b):
         d = [x for x in b if x in a]                                        
         if len(c) == len(d):                                                
             print("Given inputs {0} and {1} are Anagram".format(a, b))
-        else:
-            print("Given inputs are not Anagram")
-    else:
-        print("Given inputs are not Anagram")
-
+            return 
+    print("Given inputs are not Anagram")
 
 
 # Find Prime Numbers
