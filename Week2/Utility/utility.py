@@ -358,3 +358,19 @@ def anagram(word1, word2):
             return False
     else:
         return False         
+
+
+def find_anagram(alist):                            
+    anagram = []                                                
+    for i in alist:                                             
+        c = False                                               
+        for j in alist:                                         
+            if j not in anagram:                                
+                if i != j:                                      
+                    if sorted(str(i)) == sorted(str(j)):        
+                        anagram.append(j)                       
+                        c = True
+        if c == True:
+            anagram.append(i)                                   
+
+    return anagram                                              
