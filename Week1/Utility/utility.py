@@ -250,29 +250,19 @@ dividing it into smallest number of notes possible
 returning number of notes and note value
 """
 def money_change(money):                            
-    moneyDict = {'one' : [1], 'two' : [2,3,4], 'five' : range(5,10), "ten" : range(10,50), 'fifty' : range(50,100), 'hundred' : range(100,500), 'five_hundred' : range(500,1000), 'one_thousand' : range(1000,20000)}           
-    numeric = {'one' : 1, 'two' : 2, 'five' : 5, 'ten' : 10, 'fifty' : 50, 'hundred' : 100, 'five_hundred' : 500, 'one_thousand' : 1000}                                                                                        
-    c = 0                                                                               
-    
+    moneyDict = {1 : [1], 2 : [2,3,4], 5 : range(5,10), 10 : range(10,50), 50 : range(50,100), 100 : range(100,500), 500 : range(500,1000), 1000 : range(1000,20000)}                                                                                        
+    total_notes = 0                                                                               
     while True:                                                                         
-        for i in moneyDict:                                                             
-
-            if money in moneyDict[i]:                                                   
-
-                d = numeric[i]                                                          
-
-                while money >= d:                                                       
-                    n_note = money // d                                                 
-                    money = money % d                                                   
-                    print("{0} notes of rupee {1}".format(n_note, d))                   
-                    c += n_note                                                         
-
+        for note in moneyDict:                                                             
+            if money in moneyDict[note]:                                                                                                          
+                while money >= note:                                                       
+                    n_note = money // note                                                 
+                    money = money % note                                                   
+                    print("{0} notes of rupee {1}".format(n_note, note))                   
+                    total_notes += n_note                                                         
         if money == 0:                                                                  
-            print("Total minimum number of notes = {0}".format(c))                      
-            break                                                                       
-            
-        else:
-            continue                                                                    
+            print("Total minimum number of notes = {0}".format(total_notes))                      
+            break                                                                                                                                        
 
 
 # Generate coupon number
