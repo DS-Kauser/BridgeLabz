@@ -13,3 +13,6 @@ def queue_prime():
     for i in find_anagram(prime(start,end)):
         prime_queue.enqueue(i)
     prime_queue.print_list()
+
+if __name__ == "__main__":
+    queue_prime()
