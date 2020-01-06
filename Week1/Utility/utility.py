@@ -232,18 +232,14 @@ returning the roots
 def cal_quad_roots(a, b, c):                        
     d = b * b - 4 * a * c                                       
     if d > 0:                                                   
-
         root1 = round(float((-b + sqrt(d)) / (2 * a)), 3)       
         root2 = round(float((-b - sqrt(d)) / (2 * a)), 3)       
-
-    else:                                                       
-
-        d = abs(d)                                              
-        real = round(float(-b / (2 * a)), 3)                    
-        image = round(float(sqrt(d) / (2 * a)), 3)              
-        root1 = complex(real, image)                            
-        root2 = complex(real, -image)
-
+        return root1, root2
+    d = abs(d)                                              
+    real_part = round(float(-b / (2 * a)), 3)                    
+    image_part = round(float(sqrt(d) / (2 * a)), 3)              
+    root1 = complex(real_part, image_part)                            
+    root2 = complex(real_part, -image_part)
     return root1, root2                                         
 
 
