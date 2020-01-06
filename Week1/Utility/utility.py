@@ -161,9 +161,7 @@ def find_pelindrome(alist):
     for i in alist:                                 
         if str(i) == str(i)[::-1]:                  
             pelindrome.append(i)                    
-    
     return pelindrome                               
-
 
 
 # Find Anagram
@@ -174,20 +172,18 @@ appending to alist
 returning that list
 """
 def find_anagram(alist):                            
-    anagram = []                                                
-    for i in alist:                                             
+    anagrams = []                                                
+    for element in alist:                                             
         c = False                                               
-        for j in alist:                                         
-            if j not in anagram:                                
-                if i != j:                                      
-                    if sorted(str(i)) == sorted(str(j)):        
-                        anagram.append(j)                       
+        for other_element in alist:                                         
+            if other_element not in anagrams:                                
+                if element != other_element:                                      
+                    if sorted(str(element)) == sorted(str(other_element)):        
+                        anagrams.append(other_element)                       
                         c = True
         if c == True:
-            anagram.append(i)                                   
-
-    return anagram                                              
-
+            anagrams.append(element)                                   
+    return anagrams                                              
 
 
 # Monthly payment
