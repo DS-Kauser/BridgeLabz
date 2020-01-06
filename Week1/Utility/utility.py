@@ -10,7 +10,6 @@
 
 import numpy as np
 from math import sqrt
-from itertools import permutations
 import random
 from datetime import datetime
 
