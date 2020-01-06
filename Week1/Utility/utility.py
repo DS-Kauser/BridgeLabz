@@ -15,7 +15,6 @@ import random
 from datetime import datetime
 
 
-
 # Permutation of string
 """
 taking a string
@@ -23,19 +22,14 @@ calculating all permutaion of string
 adding it to list
 returning that list
 """
-def get_permutations(string):                       
-    a = list(permutations(string))                                          
-    c = []                                                                  
-    for i in range(len(a)):                                     
-        c.append(''.join(a[i]))                                             
-    print("All permutation of string : {0}".format(c), end = '\n\n')        
-    unique = []                                                             
-    for i in c:
-        if i not in unique:                                                 
-            unique.append(i)                                                
-    print("All Unique Permutations : {0}".format(unique))                   
 
-
+def get_permutations(string, prefix = ''):
+    if len(string) == 0:
+        print(prefix)
+    
+    for i in range(len(string)):
+        rem = string[0:i] + string[i+1:]
+        get_permutations(rem, prefix + string[i])                  
 
 
 # Binary Search
