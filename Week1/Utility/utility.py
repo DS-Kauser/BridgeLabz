@@ -25,7 +25,6 @@ returning that list
 def get_permutations(string, prefix = ''):
     if len(string) == 0:
         print(prefix)
-    
     for i in range(len(string)):
         rem = string[0:i] + string[i+1:]
         get_permutations(rem, prefix + string[i])                  
@@ -39,16 +38,12 @@ using recursive method to search the word
 def binary_search(lst, start, end, word):           
     if end >= start:                                                                
         mid = start + (end-start) // 2                                              
-        
         if lst[mid].lower() == word.lower():                                        
             print("{0} is present at index {1}".format(word.lower(), mid))
             return None
-        
         if lst[mid] > word:                                                       
             return binary_search(lst, start, mid, word)                           
-        
         return binary_search(lst, mid+1, end, word)
-    
     print('{0} is not found'.format(word))
     return None                                      
 
@@ -93,38 +88,32 @@ taking alist
 sorting that list using merge sort
 returning that list
 """
-def merge_sort(alist):                              
-    if len(alist) > 1:                              
-        mid = len(alist)//2                         
-        left = alist[ : mid]                        
-        right = alist[mid : ]                       
-        
-        merge_sort(left)                            
-        merge_sort(right)                           
-        
-        i=j=k=0                                     
-        while i < len(left) and j < len(right):     
-            if left[i] < right[j]:                  
-                alist[k] = left[i]                  
-                i += 1
-                
-            else:
-                alist[k] = right[j]                 
-                j += 1
-            k += 1                          
-            
-            
-        while i < len(left):                        
-            alist[k] = left[i]                      
-            i += 1
-            k += 1
-            
-        while j < len(right):                       
-            alist[k] = right[j]                     
-            j += 1
-            k += 1
-            
-    return alist                                    
+def merge(A, B):
+    c, m, n = [], len(A), len(B)
+    i = j = 0
+    while i + j < m + n:
+        if i == m:
+            c.append(B[j])
+            j = j+1
+        elif j == n:
+            c.append(A[i])
+            i = i+1
+        elif A[i] <= B[j]:
+            c.append(A[i])
+            i = i+1
+        elif A[i] > B[j]:
+            c.append(B[j])
+            j = j+1
+    return c
+
+def merge_sort(alist, start, end):
+    if end - start <= 1:
+        return alist[start:end]
+    elif end -start > 1:
+        mid = (start+end)//2
+        l = merge_sort(alist,start,mid)
+        r = merge_sort(alist,mid,end)
+        return merge(l,r)                              
 
 
 # Anagram Detection
