@@ -9,13 +9,13 @@ if __name__ == '__main__':
     try:
         # taking list and sorting it using insertion sort                                                            
         num_of_element = int(input("Enter number of element in your list : "))
-        alist = []
+        a_list = []
         for i in range(num_of_element):
             temp = int(input("Enter your number : "))
-            alist.append(temp)
+            a_list.append(temp)
                                       
-        alist = insertion_sort(alist)                               
-        print(alist)                                                
+        a_list = insertion_sort(a_list)                               
+        print(a_list)                                                
 
     except:                                                         
-        print("oops! something went wrong")                         
+        print("Please check your input")                         
