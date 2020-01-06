@@ -192,12 +192,12 @@ taking principal, rate of interest and time period
 calculating monthly payment
 returning this payment
 """
-def monthly_payment(principal,rate,time_period):     
-    n = 12*time_period                                          
-    r = rate / (12 * 100)                                       
-    payment = round((principal*r)/(1-(1+r)**(-n)), 2)           
+def monthly_payment(principal, rate, time_period):     
+    no_of_month = 12*time_period                                          
+    monthly_rate = rate / (12 * 100)                                       
+    payment = (principal*monthly_rate)/(1-(1+monthly_rate)**(-no_of_month))
+    payment = round(payment, 2)           
     return payment
-
 
 
 # Convert to binary
