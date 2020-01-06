@@ -4,14 +4,12 @@ sys.path.append('/home/user/Desktop/BridgeLabz')         # helps in importing fu
 # importing get_permutations from utility
 from Week1.Utility.utility import get_permutations                        
 
-if __name__ == '__main__':                                          
-    while True:                                                     
-        try:                                                        
-            # taking user input string and getting permutations
-            string = input("Enter your String : ")                  
-            get_permutations(string)                                
-            break                                                   
+def permutation():
+    try: 
+        word = input("Enter string to get permutations : ")
+        get_permutations(word)
+    except:
+        print("Enter a valid input")
 
-        except:                                                     
-            print("Invalid Input")                                  
-
+if __name__ == "__main__":
+    permutation()
