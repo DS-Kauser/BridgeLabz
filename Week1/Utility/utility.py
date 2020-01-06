@@ -209,19 +209,17 @@ convert binary number to set of four
 returning that number
 """
 def to_binary(decimal_num):                           
-    a = []                                           
+    return_binary = ""                                           
     while decimal_num > 0:                           
-        a.append(str(decimal_num%2))                 
+        return_binary = return_binary + str(decimal_num%2)                 
         decimal_num = decimal_num//2                 
-    a.reverse()                                      
-    a = ''.join(a)                                   
-    nibble = len(a)%4                                
+    return_binary = return_binary[::-1]                                       
+    nibble = len(return_binary)%4                                
     if nibble == 0:                                  
-        return a                                     
-    else:
-        nibble = 4-nibble                            
-        a = '0'*nibble + a                           
-        return a                                     
+        return return_binary                                     
+    nibble = 4-nibble                            
+    return_binary = '0'*nibble + return_binary                           
+    return return_binary                                   
     
     
 # Calculate Quadratic roots
