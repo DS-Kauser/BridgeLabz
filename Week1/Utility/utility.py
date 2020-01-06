@@ -358,7 +358,6 @@ changing shape of list a into array(row , col)
 """
 
 def show_array(row, col):                           
-    
     elements = row * col                            
     x = []                                          
     print("Enter the values row wise")
@@ -368,319 +367,30 @@ def show_array(row, col):
     x = np.array(x).reshape(row, col)               
     return x
 
-
-def play_tic_tac_toe():                             
-    a = [" "] * 9
-    a = np.array(a).reshape(3, 3)
-    print("************* TIC-TAC-TOE ***************")
-    print(a)
-    print()
-    win = 0
-    print("User value is X")
-    print()
-    while True:
-        row_u = int(input("Enter row : "))
-        col_u = int(input("Enter column : "))
-        print()
-        if row_u < 4 and col_u < 4 and row_u > 0 and col_u > 0:
-            a[row_u - 1][col_u - 1] = 'X'
-            print(a)
-            break
-        else:
-            print("Invalid input")
-            continue
-
-    while True:
-        row_c = random.randint(0, 2)
-        col_c = random.randint(0, 2)
-        print()
-        if a[row_c][col_c] == ' ':
-            a[row_c][col_c] = 'O'
-            print(a)
-            break
-        else:
-            continue
-
-    while True:
-        row_u = int(input("Enter row : "))
-        col_u = int(input("Enter column : "))
-        print()
-        if row_u < 4 and col_u < 4 and row_u > 0 and col_u > 0:
-            if a[row_u - 1][col_u - 1] == ' ':
-                a[row_u - 1][col_u - 1] = 'X'
-                print(a)
-                print()
-                break
-            else:
-                print("Space is occupied")
-                print()
-                continue
-        else:
-            print("Invalid input")
-            continue
-
-    for turn in range(3):
-
-        for i in range(3):
-
-            # computer win
-            if a[i][0] == 'O' and a[i][1] == 'O':
-                if a[i][2] == ' ':
-                    a[i][2] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[i][1] == "O" and a[i][2] == 'O':
-                if a[i][0] == ' ':
-                    a[i][0] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[i][0] == "O" and a[i][2] == 'O':
-                if a[i][1] == ' ':
-                    a[i][1] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[0][i] == 'O' and a[1][i] == 'O':
-                if a[2][i] == ' ':
-                    a[2][i] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[1][i] == 'O' and a[2][i] == 'O':
-                if a[0][i] == ' ':
-                    a[0][i] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[0][i] == 'O' and a[2][i] == 'O':
-                if a[1][i] == ' ':
-                    a[1][i] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[0][0] == 'O' and a[1][1] == 'O':
-                if a[2][2] == ' ':
-                    a[2][2] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[0][0] == 'O' and a[2][2] == 'O':
-                if a[1][1] == ' ':
-                    a[1][1] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[1][1] == 'O' and a[2][2] == 'O':
-                if a[0][0] == ' ':
-                    a[0][0] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[2][0] == 'O' and a[1][1] == 'O':
-                if a[0][2] == ' ':
-                    a[0][2] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-            elif a[2][0] == 'O' and a[0][2] == 'O':
-                if a[1][1] == ' ':
-                    a[1][1] = 'O'
-                    print(a)
-                    print("Computer won")
-                    win = 2
-                    break
-
-            elif a[1][1] == 'O' and a[0][2] == 'O':
-                if a[2][0] == ' ':
-                    a[2][0] = 'O'
-                    print(a)
-                    print("Computer Won")
-                    win = 2
-                    break
-
-        if win == 2:
-            break
-
-            # user
-        for i in range(3):
-            if a[i][0] == 'X' and a[i][1] == 'X':
-                if a[i][2] == ' ':
-                    a[i][2] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[i][1] == "X" and a[i][2] == 'X':
-                if a[i][0] == ' ':
-                    a[i][0] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[i][0] == "X" and a[i][2] == 'X':
-                if a[i][1] == ' ':
-                    a[i][1] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[0][i] == 'X' and a[1][i] == 'X':
-                if a[2][i] == ' ':
-                    a[2][i] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[1][i] == 'X' and a[2][i] == 'X':
-                if a[0][i] == ' ':
-                    a[0][i] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[0][i] == 'X' and a[2][i] == 'X':
-                if a[1][i] == ' ':
-                    a[1][i] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[0][0] == 'X' and a[1][1] == 'X':
-                if a[2][2] == ' ':
-                    a[2][2] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[0][0] == 'X' and a[2][2] == 'X':
-                if a[1][1] == ' ':
-                    a[1][1] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[1][1] == 'X' and a[2][2] == 'X':
-                if a[0][0] == ' ':
-                    a[0][0] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[2][0] == 'X' and a[1][1] == 'X':
-                if a[0][2] == ' ':
-                    a[0][2] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[2][0] == 'X' and a[0][2] == 'X':
-                if a[1][1] == ' ':
-                    a[1][1] = 'O'
-                    print(a)
-                    print()
-                    break
-
-            elif a[1][1] == 'X' and a[0][2] == 'X':
-                if a[2][0] == ' ':
-                    a[2][0] = 'O'
-                    print(a)
-                    print()
-                    break
-
-
-
-        else:
-            while True:
-                row_c = random.randint(0, 2)
-                col_c = random.randint(0, 2)
-                print()
-                if a[row_c][col_c] == ' ':
-                    a[row_c][col_c] = 'O'
-                    print(a)
-                    print()
-                    break
-                else:
-                    continue
-
+def gambler(stake, goal, trails):
+    for i in range(1, trails+1):
+        bet, win, lose = 0, 0, 0
+        cash = stake
         while True:
-            row_u = int(input("Enter row : "))
-            col_u = int(input("Enter column : "))
-            print()
-            if row_u < 4 and col_u < 4 and row_u > 0 and col_u > 0:
-                if a[row_u - 1][col_u - 1] == ' ':
-                    a[row_u - 1][col_u - 1] = 'X'
-                    print(a)
-                    print()
-                    break
-                else:
-                    print("Space is occupied")
-                    print()
-                    continue
-            else:
-                print("Invalid input")
-                print()
+            x = random.randint(0,1)
+            if x == 0:
+                cash = cash - 1
+                bet = bet + 1
+                lose = lose + 1
+                continue
+            cash = cash + 1 
+            bet = bet + 1
+            win = win + 1
+            if cash == 0 or cash == goal:
+                break
+        print("In {} Trail :".format(i))
+        print("No. of bets = ", bet)
+        print("No. of wins = ", win)
+        print("No of lose = ", lose)
+        print("Win Percentage = ", (win*100)/(win+lose))
+        print("Lose Percentage = ", (lose*100)/(win+lose))
 
-        for i in range(3):
-            if a[i][0] == a[i][1] and a[i][1] == a[i][2]:
-                if a[i][0] == 'X':
-                    print("You Won")
-                    win = 1
-                    break
-
-            elif a[0][i] == a[1][i] and a[1][i] == a[2][i]:
-                if a[0][i] == 'X':
-                    print("You Won")
-                    win = 1
-                    break
-
-            elif a[0][0] == a[1][1] and a[1][1] == a[2][2]:
-                if a[0][0] == 'X':
-                    print("You Won")
-                    win = 1
-                    break
-
-            elif a[0][2] == a[1][1] and a[1][1] == a[2][0]:
-                if a[0][2] == 'X':
-                    print("You Won")
-                    win = 1
-                    break
-        if win == 1:
-            break
-
-        if win == 2:
-            print("Well Played")
-            break
-
-    if win == 2:
-        print("You Lose")
-
-
-    elif win == 1:
-        print("Well Played")
-
-
+        
 # Calculate Windchill speed
 """
 taking temperatur and velocity
