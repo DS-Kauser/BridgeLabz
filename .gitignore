@@ -1,3 +1,6 @@
 test.py
 .vscode
 __pycache__
+__init__.cpython-37.pyc
+test.cpython-37.pyc
+utility.cpython-37.pyc
