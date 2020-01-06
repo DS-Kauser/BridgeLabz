@@ -12,7 +12,7 @@ def stack_prime():
         start = 0
         end = 1000
         for i in find_anagram(prime(start,end)):
-            prime_stack.insert_head(i)
+            prime_stack.push(i)
         prime_stack.print_list()
     except:
         print("Check for index value")
