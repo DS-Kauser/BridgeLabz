@@ -274,24 +274,19 @@ generated requuired coupons in similar fashion
 """
 def gen_coupon_number(number_of_coupons):               
     coupon = []                                                                                         
-
     while True:                                                                                         
         lower = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split()                           
         upper = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split()                           
         num = "0 1 2 3 4 5 6 7 8 9".split()                                                             
         x, y, z = random.choices(lower, k=3), random.choices(upper, k=3), random.choices(num, k=3)      
         dummy_coupon = []                                                                               
-
         for j in range(0, 3):
             xyz = x[j] + y[j] + z[j]
             dummy_coupon.append(xyz)                                                                    
-
         dummy_coupon = ''.join(dummy_coupon)                                                            
-            
         if dummy_coupon not in coupon:
             coupon.append(dummy_coupon)                                                                 
-
-        if len(coupon) == number_of_coupons:                                                            
+        if len(coupon) == number_of_coupons:                                                          
             break
     return coupon                                                                                       
 
