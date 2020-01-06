@@ -344,3 +344,19 @@ def prime(start, end):
     
     else:
         return []
+
+
+
+def anagram(word1, word2):
+    word1 = str(word1)
+    word2 = str(word2)
+    if len(word1) == len(word2):
+        if sorted(word1) == sorted(word2):
+            return True
+
+        else:
+            return False
+    else:
+        return False         
+
+print(anagram(12,21))
