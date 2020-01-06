@@ -123,7 +123,6 @@ checking the letters of the word are same or not
 if same thery are anagram
 """
 def anagram_detection(a, b):                        
-
     if len(a) == len(b):                                                    
         c = [x for x in a if x in b]                                        
         d = [x for x in b if x in a]                                        
@@ -143,14 +142,11 @@ def find_prime(end):
     alist = [2, 3, 5]                               
     for i in range(7, end+1):                       
         c = 0                                       
-        
         for j in alist:                             
             if i%j != 0:                            
                 c += 1                              
-                
         if c == len(alist):                                         
             alist.append(i)                         
-    
     return alist
 
 
