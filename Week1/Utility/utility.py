@@ -59,16 +59,15 @@ taking a list
 sorting it with insertion sort method
 return that list
 """
-def insertion_sort(alist):                          
-    for i in range(1,len(alist)):                                   
-        item_to_insert = alist[i]                                   
+def insertion_sort(a_list):                          
+    for i in range(1,len(a_list)):                                   
+        item_to_insert = a_list[i]                                   
         j = i-1                                                     
-        while j >= 0 and alist[j] > item_to_insert:                 
-            alist[j+1] = alist[j]                                   
+        while j >= 0 and a_list[j] > item_to_insert:                 
+            a_list[j+1] = a_list[j]                                   
             j -= 1                                                  
-        alist[j+1] = item_to_insert                                 
-    return alist                                                    
-
+        a_list[j+1] = item_to_insert                                 
+    return a_list                                                    
 
 
 # Bubble sort
