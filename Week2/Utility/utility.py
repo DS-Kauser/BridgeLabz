@@ -11,45 +11,47 @@
 from math import sqrt
 
 """
-@creating a node class
-@adding data and refrence to next node in node class
-@return a node with data and next pointer
+creating a node class
+adding data and refrence to next node in node class
+@return type class
 """
-class node():
+class Node():
     def __init__(self, data):
         self.data = data
         self.next = None
 
 """
-@creating a class linked_list
-@adding different method to it
-@return singly linked list
+creating a class linked_list
+adding different method to it
+@return type class 
 """
-class linked_list():
+class LinkedList():
     def __init__(self):
         self.head = None
 
     """
-    @creating pos method
-    @return - None or int type 
+    creating pos method
+    pass one argument
+    @return type int
     """
     def pos(self, element):
         if self.head is None:
             #print("List is empty")
-            return
-        else:
-            pos = 0
-            cur_node = self.head
-            while True:
-                if cur_node.data == element:
-                    return pos
-                    break
-                elif cur_node.next == None:
-                    return None
-                    break
-                cur_node = cur_node.next
-                pos += 1
+            return None
+        pos = 0
+        cur_node = self.head
+        while True:
+            if cur_node.data == element:
+                return pos
+            if cur_node.next == None:
+                return None
+            cur_node = cur_node.next
+            pos += 1
     
+    """
+    creating list_len method
+    @return type int
+    """
     def list_len(self):
         length = 0
         curr_node = self.head
@@ -58,80 +60,104 @@ class linked_list():
             curr_node = curr_node.next
         return length
 
+    """
+    creating insert_end method
+    pass one argument
+    @return None
+    """
     def insert_end(self, new_data):
         new_node = node(new_data)
         if self.head is None:
             self.head = new_node
-        else:
-            last_node = self.head
-            while True:
-                if last_node.next is None:
-                    break
-                last_node = last_node.next
-            last_node.next = new_node
-       
+            return None
+        last_node = self.head
+        while True:
+            if last_node.next is None:
+                break
+            last_node = last_node.next
+        last_node.next = new_node
+        return None
+
+    """
+    creating a method insert_head
+    pass one argument
+    @return None
+    """
     def insert_head(self, new_data):
         new_node = node(new_data)
         if self.head is None:
             self.head = new_node
-        else:
-            temp_node = self.head
-            self.head = new_node
-            new_node.next = temp_node
-            del temp_node
-        
+            return None
+        temp_node = self.head
+        self.head = new_node
+        new_node.next = temp_node
+        del temp_node
+        return None
+    
+    """
+    creating a method insert_at
+    passing two argument
+    @return None
+    """
     def insert_at(self, new_data, position):
         if position < 0 or position >= self.list_len():
             print("Enter a valid input")
-            return 
-        elif position == 0:
+            return None
+        
+        if position == 0:
             self.insert_head(new_data)
             return
-        else:
-            new_node = node(new_data)
-            cur_node = self.head
-            cur_pos = 0
-            while True:
-                if cur_pos == position:
-                    pre_node.next = new_node
-                    new_node.next = cur_node
-                    break
-                pre_node = cur_node
-                cur_node = cur_node.next
-                cur_pos += 1
+        
+        new_node = node(new_data)
+        cur_node = self.head
+        cur_pos = 0
+        while True:
+            if cur_pos == position:
+                pre_node.next = new_node
+                new_node.next = cur_node
+                return None
+            pre_node = cur_node
+            cur_node = cur_node.next
+            cur_pos += 1
 
+    """
+    creating del_head method
+    @return None
+    """
     def del_head(self):
         if self.head is not None:
             temp_node = self.head
             self.head = self.head.next
             temp_node.next = None
-        else:
-            print("linked list is empty")
-            
+
+    """
+    creating del_end method
+    @return None
+    """        
     def del_end(self):
         if self.head is not None:
             last_node = self.head
             if self.list_len() == 1:
                 self.head = None
-            else:
-                while True:
-                    if last_node.next == None:
-                        pre_node.next = None
-                        break
-                    
-                    pre_node = last_node
-                    last_node = last_node.next
-        else:
-            print("list is empty")   
-
+                return None
+            while True:
+                if last_node.next == None:
+                    pre_node.next = None
+                    return None
+                pre_node = last_node
+                last_node = last_node.next
+    
+    """
+    creating del_at method
+    pass one argument
+    @return None
+    """
     def del_at(self, position):
-        if position < 0 or position >= self.list_len():
-            print("Enter a valid position")
-            return 
-        elif position == 0:
-            self.del_head()
-            return 
-        else:
+        if position >= 0 and position <= self.list_len():
+            if position == 0:
+                self.del_head()
+                return 
+
             if self.head is not None:
                 cur_node = self.head
                 cur_pos = 0
@@ -139,23 +165,25 @@ class linked_list():
                     if cur_pos == position:
                         pre_node.next = cur_node.next
                         cur_node.next = None
-                        break
+                        return None
                     pre_node = cur_node
                     cur_node = cur_node.next
                     cur_pos += 1
-            else:
-                print("list is empty")
 
+    """
+    creating print_list method
+    @return None
+    """
     def print_list(self):
         if self.head is None:
             print("list is empty")
-        else:
-            curr_node = self.head
-            while True:
-                print(curr_node.data)
-                curr_node = curr_node.next
-                if curr_node is None:
-                    break
+            return
+        curr_node = self.head
+        while True:
+            print(curr_node.data)
+            curr_node = curr_node.next
+            if curr_node is None:
+                break
 
 
 class ord_linked_list(linked_list):
