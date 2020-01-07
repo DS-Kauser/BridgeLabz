@@ -31,7 +31,7 @@ class linked_list():
 
     def pos(self, element):
         if self.head is None:
-            print("List is empty")
+            #print("List is empty")
             return
         
         else:
