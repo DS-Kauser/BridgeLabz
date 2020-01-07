@@ -11,7 +11,7 @@
 from math import sqrt
 
 """
-creating a node class
+creating a class named Node
 adding data and refrence to next node in node class
 @return type class
 """
@@ -21,7 +21,7 @@ class Node():
         self.next = None
 
 """
-creating a class linked_list
+creating a class named LinkedList
 adding different method to it
 @return type class 
 """
@@ -66,7 +66,7 @@ class LinkedList():
     @return None
     """
     def insert_end(self, new_data):
-        new_node = node(new_data)
+        new_node = Node(new_data)
         if self.head is None:
             self.head = new_node
             return None
@@ -84,7 +84,7 @@ class LinkedList():
     @return None
     """
     def insert_head(self, new_data):
-        new_node = node(new_data)
+        new_node = Node(new_data)
         if self.head is None:
             self.head = new_node
             return None
@@ -108,7 +108,7 @@ class LinkedList():
             self.insert_head(new_data)
             return
         
-        new_node = node(new_data)
+        new_node = Node(new_data)
         cur_node = self.head
         cur_pos = 0
         while True:
@@ -185,7 +185,11 @@ class LinkedList():
             if curr_node is None:
                 break
 
-
+"""
+creating a class named OrdLinkedList
+adding different method to it
+@return type class 
+"""
 class OrdLinkedList(LinkedList):
     def __init__(self):
         self.head = None
@@ -213,7 +217,7 @@ class OrdLinkedList(LinkedList):
     @return None
     """
     def sort_add(self, element):
-        new_node = node(element)
+        new_node = Node(element)
         if self.head is None:
             self.head = new_node
             return
@@ -256,33 +260,55 @@ class OrdLinkedList(LinkedList):
                 cur_node = cur_node.next
                 
     
+"""
+creating a class named stack
+adding different method to it
+@return type class
+""" 
+class stack(LinkedList):
 
-class stack(linked_list):
-
+    """
+    creating a method named is_empty
+    @return type boolean
+    """
     def is_empty(self):
         if self.head is None:
             return True
-        else:
-            return False
+        return False
 
+    """
+    creating a method named size
+    @return type int
+    """
     def size(self):
         return self.list_len()
 
+    """
+    creating a method named push
+    @return None
+    """
     def push(self, element):
         self.insert_head(element)
 
+    """
+    creating a method named pop
+    @return None
+    """
     def pop(self):
         self.del_head()
     
+    """
+    creating a method named peek
+    @return top element 
+    """
     def peek(self):
         if self.head is not None:
             return self.head.data
-        else:
-            return None
+        return None
 
 
 
-class queue(linked_list):
+class queue(LinkedList):
 
     def is_empty(self):
         if self.head is None:
@@ -301,7 +327,7 @@ class queue(linked_list):
 
 
 
-class deque(linked_list):
+class deque(LinkedList):
     
     def add_front(self, item):
         self.insert_end(item)
