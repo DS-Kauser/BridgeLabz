@@ -208,7 +208,7 @@ class ord_linked_list(linked_list):
             cur_node = self.head
             while cur_node is not None:
                 if cur_node.data > new_node.data and cur_node is self.head:
-                    self.insert_start(element)
+                    self.insert_head(element)
                     break
                 elif cur_node.data > new_node.data:
                     pre_node.next = new_node
