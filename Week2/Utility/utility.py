@@ -259,7 +259,7 @@ class OrdLinkedList(LinkedList):
                 cur_node = cur_node.next
                     
 """
-creating a class named stack
+creating a child class of LinkedList named stack
 adding different method to it
 @return stack (type class)
 """ 
@@ -305,7 +305,7 @@ class stack(LinkedList):
         return None
 
 """
-creating a class named queue
+creating a child class of LinkedList named queue
 adding different method to it
 @return queue (type class)
 """
@@ -343,54 +343,83 @@ class queue(LinkedList):
         return self.list_len()
 
 """
-creating a class named queue
+creating a child class of LinkedList named queue
 adding different method to it
-@return type class
+@return deque (type class)
 """
 class deque(LinkedList):
-    
+    """
+    creating add_front method which adds element to deque at front side
+    taking item as argument
+    @return None
+    """
     def add_front(self, item):
         self.insert_end(item)
 
+    """
+    creating add_rear method which adds element to deque at rear side
+    taking item as argument
+    @return None
+    """
     def add_rear(self, item):
         self.insert_head(item)
 
+    """
+    creating del_front method which del front element of the deque
+    takes no argument
+    @return None
+    """
     def del_front(self):
         self.del_end()
 
+    """
+    creating del_rear method which del rear element of the deque
+    taking no argument
+    @return None
+    """    
     def del_rear(self):
         self.del_front()
     
+    """
+    creating is_empty method which check whether deque is empty or not
+    taking no argument
+    @return booleans(True or False)
+    """
     def is_empty(self):
         if self.head == None:
             return True
-        else:
-            return False
-
+        return False
+    
+    """
+    creating a method which calculate deque length
+    taking no argument
+    @return length of deque(type int)
+    """
     def size(self):
         return self.list_len()
 
-
-
+"""
+creating a function named prime 
+it calculates prime number between given range
+taking starting point and end point till prime number is needed as argument
+@return prime numbers (type = list)
+"""
 def prime(start, end):
     if start == end:
         return []
     
-    elif start < end and end == 2:
+    if start < end and end == 2:
         return [2]
     
-    elif end > start and start >= 0 and end >= 2:
+    if end > start and start >= 0 and end >= 2:
         prime_list = []
         number = start
-        #print(type(end))
         while True:
             if number > end:
                 break
-            #print('again')
             if number == 1:
                 number += 1
                 continue
-
             count = 0
             for i in range(2, int(sqrt(number))+1, 1):
                 if number%i == 0:
@@ -398,26 +427,25 @@ def prime(start, end):
                 
             if count == 0: 
                 prime_list.append(number)
-            #print(prime_list)
             number = number + 1
         return prime_list
     
     else:
         return []
 
-
-
+"""
+creating a function named anagram
+taking two words to check 
+@return booleans(True or False)
+"""
 def anagram(word1, word2):
     word1 = str(word1)
     word2 = str(word2)
     if len(word1) == len(word2):
         if sorted(word1) == sorted(word2):
             return True
-
-        else:
-            return False
-    else:
-        return False         
+        return False
+    return False         
 
 
 def find_anagram(alist):                            
