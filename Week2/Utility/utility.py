@@ -186,67 +186,72 @@ class LinkedList():
                 break
 
 
-class ord_linked_list(linked_list):
+class OrdLinkedList(LinkedList):
     def __init__(self):
         self.head = None
 
-    
+    """
+    creating list_sort method
+    @return None
+    """
     def list_sort(self):
-        
         success = True
         while success:
             success = False
             pre_node = self.head
             cur_node = pre_node.next
-            
             while cur_node is not None:
                 if pre_node.data > cur_node.data:
                     pre_node.data, cur_node.data = cur_node.data, pre_node.data
                     success = True
-                
                 pre_node = cur_node
                 cur_node = cur_node.next
 
-    
+    """
+    creating sort_add method
+    pass one argument
+    @return None
+    """
     def sort_add(self, element):
         new_node = node(element)
         if self.head is None:
             self.head = new_node
+            return
         
-        else:
-            cur_node = self.head
-            while cur_node is not None:
-                if cur_node.data > new_node.data and cur_node is self.head:
-                    self.insert_head(element)
-                    break
-                elif cur_node.data > new_node.data:
-                    pre_node.next = new_node
-                    new_node.next = cur_node
-                    break
-                
-                pre_node = cur_node
-                cur_node = cur_node.next
-                
-            if cur_node is None:
+        cur_node = self.head
+        while cur_node is not None:
+            if cur_node.data > new_node.data and cur_node is self.head:
+                self.insert_head(element)
+                return
+            if cur_node.data > new_node.data:
                 pre_node.next = new_node
-                    
-    
-    def del_val(self, value):
+                new_node.next = cur_node
+                return
+            pre_node = cur_node
+            cur_node = cur_node.next
         
+        pre_node.next = new_node
+        return None
+                    
+    """
+    creating del_val method
+    pass one argument
+    @return None
+    """
+    def del_val(self, value):
         if self.head is not None:
-            
             cur_node = self.head
+            
             while cur_node is not None:
-                
                 if self.head.data == value:
                     self.head = self.head.next
-                    break
-                else:
-                    if cur_node.data == value:
+                    return
+                
+                if cur_node.data == value:
                         pre_node.next = cur_node.next
                         cur_node.next = None
                         del cur_node
-                        break
+                        return
                 pre_node = cur_node
                 cur_node = cur_node.next
                 
