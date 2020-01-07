@@ -258,8 +258,7 @@ class OrdLinkedList(LinkedList):
                         return
                 pre_node = cur_node
                 cur_node = cur_node.next
-                
-    
+                    
 """
 creating a class named stack
 adding different method to it
@@ -306,22 +305,41 @@ class stack(LinkedList):
             return self.head.data
         return None
 
-
-
+"""
+creating a class named queue
+adding different method to it
+@return type class
+"""
 class queue(LinkedList):
 
+    """
+    creating a method named is_empty
+    @return type boolean
+    """
     def is_empty(self):
         if self.head is None:
             return True
-        else:
-            return False
-        
+        return False
+
+    """
+    creating a method named enqueue
+    passing one argument
+    @return None
+    """    
     def enqueue(self, item):
         self.insert_end(item)
 
+    """
+    creating a method named dequeue
+    @return None
+    """
     def dequeue(self):
         self.del_head()
 
+    """
+    creating a method name size
+    @return type int
+    """
     def size(self):
         return self.list_len()
 
