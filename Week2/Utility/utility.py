@@ -435,7 +435,7 @@ def prime(start, end):
 
 """
 creating a function named anagram
-taking two words to check 
+taking two words as argument to check 
 @return booleans(True or False)
 """
 def anagram(word1, word2):
@@ -447,18 +447,22 @@ def anagram(word1, word2):
         return False
     return False         
 
-
-def find_anagram(alist):                            
-    anagram = []                                                
-    for i in alist:                                             
-        c = False                                               
-        for j in alist:                                         
-            if j not in anagram:                                
-                if i != j:                                      
-                    if sorted(str(i)) == sorted(str(j)):        
-                        anagram.append(j)                       
-                        c = True
+"""
+creating a function named find_anagram
+takes a list as argument to check anagram elements in that list
+@return anagram list (type = list)
+"""
+def find_anagram(lst):
+    anagrams = []
+    for element in lst:
+        c = None
+        lst_1 = lst
+        lst_1.remove(element)
+        for item in lst_1:
+            if item not in anagrams:
+                if sorted(str(element)) == sorted(str(item)):
+                    anagrams.append(item)
+                    c = True
         if c == True:
-            anagram.append(i)                                   
-
-    return anagram                                              
+            anagrams.append(element)
+    return anagrams
