@@ -1,38 +1,43 @@
 import sys
 sys.path.append("/home/user/Desktop/BridgeLabz")
-
 from Week2.Utility.utility import node
 from Week2.Utility.utility import ord_linked_list
 
+def create_ord_list(file_path):
+    lst = ord_linked_list()
+    file_op = open(file_path, 'r')
+    for line in file_op.readlines():
+        for num in line.split():
+            lst.sort_add(int(num))
+    file_op.close()
+    return lst
+
+def add_remove(lst, number):
+    position = lst.pos(number)
+    if position is not None:
+        lst.del_at(position)
+        print("Removed from the data")
+        return lst
+    lst.sort_add(number)
+    print("Added to the data")
+    return lst
+
+def rewrite(file_path,lst):
+    #lst.print_list()
+    file_op = open(file_path, 'w')
+    cur_node = lst.head
+    while cur_node is not None:
+        file_op.write("{0}\n".format(cur_node.data))
+        cur_node = cur_node.next
+    return
+
 if __name__ == '__main__':
-    while True:
-        try:
-
-            file_path = '/home/user/Desktop/BridgeLabz/Week2/Utility/number.txt'
-
-
-            list1 = ord_linked_list()
-            f = open(file_path, 'r')
-            for line in f:
-                for num in line.split():
-                    list1.sort_add(int(num))
-            f.close()
-            
-            number = int(input("Enter a number : "))
-            position = list1.pos(number)
-            if position is None:
-                list1.sort_add(number)
-                
-            else:
-                list1.del_at(position)
-
-            file_op = open(file_path,'w')
-            cur_node = list1.head
-            while cur_node is not None:
-                file_op.write("{0}\n".format(cur_node.data)) 
-                cur_node = cur_node.next
-            file_op.close()
-            break
-    
-        except:
-            print("Invalid input")
+    try:
+        #file_path = input("Give your file location : ")
+        file_path = '/home/user/Desktop/BridgeLabz/Week2/Utility/number.txt'
+        number = int(input("Enter number to search : "))
+        ord_list = create_ord_list(file_path)
+        ord_list = add_remove(ord_list, number)
+        rewrite(file_path, ord_list)
+    except:
+        print("check your input")
