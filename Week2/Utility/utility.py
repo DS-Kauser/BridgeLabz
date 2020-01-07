@@ -13,7 +13,7 @@ from math import sqrt
 """
 creating a class named Node
 adding data and refrence to next node in node class
-@return type class
+@return Node (type class)
 """
 class Node():
     def __init__(self, data):
@@ -23,7 +23,7 @@ class Node():
 """
 creating a class named LinkedList
 adding different method to it
-@return type class 
+@return LinkedList (type class) 
 """
 class LinkedList():
     def __init__(self):
@@ -32,25 +32,24 @@ class LinkedList():
     """
     creating pos method
     pass one argument
-    @return type int
+    @return position(type is int or None if element not found)
     """
     def pos(self, element):
         if self.head is None:
-            #print("List is empty")
             return None
-        pos = 0
+        position = 0
         cur_node = self.head
         while True:
             if cur_node.data == element:
-                return pos
+                return position
             if cur_node.next == None:
                 return None
             cur_node = cur_node.next
-            pos += 1
+            position += 1
     
     """
     creating list_len method
-    @return type int
+    @return length of the list(type is int)
     """
     def list_len(self):
         length = 0
@@ -186,9 +185,9 @@ class LinkedList():
                 break
 
 """
-creating a class named OrdLinkedList
+creating a child class named OrdLinkedList of LinkedList
 adding different method to it
-@return type class 
+@return OrdLinkedList (type class) 
 """
 class OrdLinkedList(LinkedList):
     def __init__(self):
@@ -262,13 +261,13 @@ class OrdLinkedList(LinkedList):
 """
 creating a class named stack
 adding different method to it
-@return type class
+@return stack (type class)
 """ 
 class stack(LinkedList):
 
     """
     creating a method named is_empty
-    @return type boolean
+    @return booleans (True or False)
     """
     def is_empty(self):
         if self.head is None:
@@ -277,7 +276,7 @@ class stack(LinkedList):
 
     """
     creating a method named size
-    @return type int
+    @return length of linked list (type int or None if empty)
     """
     def size(self):
         return self.list_len()
@@ -298,7 +297,7 @@ class stack(LinkedList):
     
     """
     creating a method named peek
-    @return top element 
+    @return top element or None if list is empty
     """
     def peek(self):
         if self.head is not None:
@@ -308,13 +307,13 @@ class stack(LinkedList):
 """
 creating a class named queue
 adding different method to it
-@return type class
+@return queue (type class)
 """
 class queue(LinkedList):
 
     """
     creating a method named is_empty
-    @return type boolean
+    @return booleans (True or False)
     """
     def is_empty(self):
         if self.head is None:
@@ -338,13 +337,16 @@ class queue(LinkedList):
 
     """
     creating a method name size
-    @return type int
+    @return length of the list(type int or None if empty)
     """
     def size(self):
         return self.list_len()
 
-
-
+"""
+creating a class named queue
+adding different method to it
+@return type class
+"""
 class deque(LinkedList):
     
     def add_front(self, item):
